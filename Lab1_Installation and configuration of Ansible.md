@@ -18,29 +18,29 @@
 
 2. Install Python 3.9, python3-pip, and wget which are compatible with Ansible using the below command:
     ```bash
-    $ sudo apt install python3.9 python3-pip wget -y
+    sudo apt install python3.9 python3-pip wget -y
     ```
 
 3. Use the following command to add the Ansible PPA:
     ```bash
-    $ sudo apt-add-repository --yes --update ppa:ansible/ansible
+    sudo apt-add-repository --yes --update ppa:ansible/ansible
     ```
 
 4. Now install Ansible by using the following command:
     ```bash
-    $ sudo apt install ansible -y
+    sudo apt install ansible -y
     ```
 
 5. Check the version of Ansible using the below command:
     ```bash
-    $ ansible --version
+    ansible --version
     ```
 
 6. Make a note of the returned private IP of Node1 and Node2 from the GCP console.
 
 7. Now go to the hosts file and make an entry of managed nodes using the below command:
     ```bash
-    $ sudo vi /etc/ansible/hosts
+    sudo vi /etc/ansible/hosts
     ```
 
 8. Add the private IPs of the managed nodes by going to GCP Console and write them to the hosts file. The file will look as below:
@@ -49,11 +49,11 @@
 
 10. SSH into each managed node, type yes and exit back to the control node for SSH host key verification:
     ```bash
-    $ ssh ec2-user@<managed_node1_private_ip>
-    $ ssh ec2-user@<managed_node2_private_ip>
+    ssh ec2-user@<managed_node1_private_ip>
+    ssh ec2-user@<managed_node2_private_ip>
     ```
 
 11. Try pinging both the nodes if you can successfully do that using the below command from the control node:
     ```bash
-    $ ansible all -m ping
+    ansible all -m ping
     ```
