@@ -1,5 +1,5 @@
 
-## Lab 2: Exploring Ad-Hoc Commands
+## Lab 2: Exploring Adhoc Commands
 
 In this lab, you will explore some common ad-hoc commands starting from memory details to copying files from one host to another.
 
