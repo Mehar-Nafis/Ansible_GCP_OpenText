@@ -2,6 +2,8 @@
 
 In this lab, you will explore some common ad-hoc commands starting from memory details to copying files from one host to another.
 
+Launch 2 more Ubuntu VM 
+
 ### Step 1: Make Localhost Entry in the Host File
 
 To run all the commands on the localhost as well, make the following entry:
