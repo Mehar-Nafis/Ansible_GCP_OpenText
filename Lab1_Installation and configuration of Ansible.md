@@ -18,7 +18,7 @@
 
 2. Install Python 3.9, python3-pip, and wget which are compatible with Ansible using the below command:
     ```bash
-    sudo apt install python3.9 python3-pip wget -y
+    sudo apt install python3 python3-pip wget -y
     ```
 
 3. Use the following command to add the Ansible PPA:
