@@ -13,8 +13,7 @@
 
 1. Check the IP is changed to “ansible-workstation” hostname and run the following command to update:
     ```bash
-    $ sudo apt update
-    $ sudo apt upgrade -y
+    sudo apt update && sudo apt upgrade -y
     ```
 
 2. Install Python 3.9, python3-pip, and wget which are compatible with Ansible using the below command:
