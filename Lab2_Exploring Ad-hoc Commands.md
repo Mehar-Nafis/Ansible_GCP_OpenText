@@ -99,7 +99,7 @@ ansible <Private_IP_node1> -b -m lineinfile -a 'dest=/home/ansible-new/demo.txt 
 ### Step 7: SSH to the Host to Check the File
 Use the below command to SSH to the host where the file was created and check if the file is created or not. Enter exit to exit from the managed node:
 ```
-ssh ec2-user@<Private_IP_node1>
+ssh ubuntu@<Private_IP_node1>
 ```
 ```
 sudo cat /home/ansible-new/demo.txt
