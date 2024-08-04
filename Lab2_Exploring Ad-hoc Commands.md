@@ -13,8 +13,8 @@ sudo vi /etc/ansible/hosts
 ```
 Add the `private ip` of the managed nodes to the `ansible-server`
 ```
-10.128.15.215
-10.128.15.216
+PRIVATE_IP of managed-node1
+PRIVATE_IP of managed-node2
 localhost ansible_connection=local
 ```
 Save and exit the file.
