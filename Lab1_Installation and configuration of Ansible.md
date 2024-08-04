@@ -13,54 +13,48 @@
 
 1. Check the IP is changed to “ansible-workstation” hostname and run the following command to update:
     ```bash
-    $ sudo yum clean all
-    $ sudo yum update all
+    $ sudo apt update
+    $ sudo apt upgrade -y
     ```
 
 2. Install Python 3.9, python3-pip, and wget which are compatible with Ansible using the below command:
     ```bash
-    $ sudo yum install python3.9 python3-pip wget -y
+    $ sudo apt install python3.9 python3-pip wget -y
     ```
 
-3. Use the following command to download the `epel-release` package:
+3. Use the following command to add the Ansible PPA:
     ```bash
-    $ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    $ sudo apt-add-repository --yes --update ppa:ansible/ansible
     ```
 
-4. Use the following command to install the `epel-release` package:
+4. Now install Ansible by using the following command:
     ```bash
-    $ sudo yum install epel-release-latest-8.noarch.rpm -y
+    $ sudo apt install ansible -y
     ```
 
-5. Now install Ansible by using the following commands:
-    ```bash
-    $ pip3 install ansible --user
-    $ sudo yum install ansible -y
-    ```
-
-6. Check the version of Ansible using the below command:
+5. Check the version of Ansible using the below command:
     ```bash
     $ ansible --version
     ```
 
-7. Make a note of the returned private IP of Node1 and Node2 from the GCP console.
+6. Make a note of the returned private IP of Node1 and Node2 from the GCP console.
 
-8. Now go to the hosts file and make an entry of managed nodes using the below command:
+7. Now go to the hosts file and make an entry of managed nodes using the below command:
     ```bash
     $ sudo vi /etc/ansible/hosts
     ```
 
-9. Add the private IPs of the managed nodes by going to GCP Console and write them to the hosts file. The file will look as below:
+8. Add the private IPs of the managed nodes by going to GCP Console and write them to the hosts file. The file will look as below:
 
-10. By listing all the hosts, check if it gives you 2 IPs that we added.
+9. By listing all the hosts, check if it gives you 2 IPs that we added.
 
-11. SSH into each managed node, type yes and exit back to the control node for SSH host key verification:
+10. SSH into each managed node, type yes and exit back to the control node for SSH host key verification:
     ```bash
     $ ssh ec2-user@<managed_node1_private_ip>
     $ ssh ec2-user@<managed_node2_private_ip>
     ```
 
-12. Try pinging both the nodes if you can successfully do that using the below command from the control node:
+11. Try pinging both the nodes if you can successfully do that using the below command from the control node:
     ```bash
     $ ansible all -m ping
     ```
