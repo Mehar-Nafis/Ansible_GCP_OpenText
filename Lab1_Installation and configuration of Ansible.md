@@ -35,25 +35,3 @@
     ```bash
     ansible --version
     ```
-
-6. Make a note of the returned private IP of Node1 and Node2 from the GCP console.
-
-7. Now go to the hosts file and make an entry of managed nodes using the below command:
-    ```bash
-    sudo vi /etc/ansible/hosts
-    ```
-
-8. Add the private IPs of the managed nodes by going to GCP Console and write them to the hosts file. The file will look as below:
-
-9. By listing all the hosts, check if it gives you 2 IPs that we added.
-
-10. SSH into each managed node, type yes and exit back to the control node for SSH host key verification:
-    ```bash
-    ssh ec2-user@<managed_node1_private_ip>
-    ssh ec2-user@<managed_node2_private_ip>
-    ```
-
-11. Try pinging both the nodes if you can successfully do that using the below command from the control node:
-    ```bash
-    ansible all -m ping
-    ```
