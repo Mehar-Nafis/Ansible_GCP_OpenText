@@ -2,7 +2,7 @@
 
 In this lab, you will explore some common ad-hoc commands starting from memory details to copying files from one host to another.
 
-Launch 2 more Ubuntu VM 
+Launch 2 more Ubuntu VM `managed-node1` and `managed-node2` and add ssh key to it.
 
 ### Step 1: Make Localhost Entry in the Host File
 
@@ -11,10 +11,10 @@ To run all the commands on the localhost as well, make the following entry:
 ```sh
 sudo vi /etc/ansible/hosts
 ```
-Add the following content:
+Add the `private ip` of the managed nodes to the `ansible-server`
 ```
-10.142.0.9
-10.142.0.10
+10.128.15.215
+10.128.15.216
 localhost ansible_connection=local
 ```
 Save and exit the file.
