@@ -4,7 +4,7 @@ In this lab, you will explore some common ad-hoc commands starting from memory d
 
 Launch 2 more Ubuntu VM `managed-node1` and `managed-node2` and add ssh key to it.
 
-### Step 1: Make Localhost Entry in the Host File
+### Step 1: Make Entry in the Host File
 
 To run all the commands on the localhost as well, make the following entry:
 
@@ -18,6 +18,52 @@ Add the `private ip` of the managed nodes to the `ansible-server`
 localhost ansible_connection=local
 ```
 Save and exit the file.
+
+For enabling `PasswordLess authentication` follow the below steps:
+
+On the ansible-server
+```
+ssh-keygen -t rsa -b 2048
+```
+Verify the  SSH key pair on your local machine:
+```
+ls -l ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+```
+Ensure the correct permissions for SSH files on your local machine:
+```
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+```
+Copy the public key:
+```
+cat ~/.ssh/id_rsa.pub
+```
+Log into the remote server via another method (e.g., console access).
+Add the public key to ~/.ssh/authorized_keys on the remote server:
+```
+echo "your_public_key_content" >> ~/.ssh/authorized_keys
+```
+Verify File Permissions
+
+On the remote server, check:
+```
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+```
+exit
+```
+Execute the below command on ansible-server to verify passwordless authentication has been enabled
+```
+ssh ubuntu@PUBLIC_IP of managed-node1
+```
+```
+ssh ubuntu@PUBLIC_IP of managed-node2
+```
+```
+ansible all -m ping
+```
+
 
 ### Step 2: Get Memory Details
 Run the following command to get the memory details:
