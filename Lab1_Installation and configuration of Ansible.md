@@ -4,32 +4,12 @@
 
 1. Go to the GCP Console and select Compute Engine.
 2. Select VM Instances and click on CREATE INSTANCE.
-3. Enter the name of the instance and select the Zone in which the instance is going to launch.
-4. Select machine type. In the boot disk section, click on Change and select Redhat Linux 8.
+3. Enter the name of the instance `ansible-server` and select the Zone in which the instance is going to launch.
+4. Select machine type. In the boot disk section, click on Change and select Ubuntu 24.04.
 5. Click on create and launch the instance.
+6. SSH into the machine
 
-### Task 2: Creating a Keypair
-
-1. Launch PuTTYgen, then select Generate. Moving your cursor over the space beneath "Key" will generate a key.
-2. Change the value `ec2-user` in the “key comment” box to “UserName”.
-3. Click on Save private key.
-4. Enter the name `ansible_privatekey` and save it to the appropriate location.
-
-### Task 3: Add the Private Key to the Created Instance
-
-1. Open the key in PuTTYgen.
-2. Select all the contents in the Key field and copy them. Make sure you select everything in that box.
-3. Navigate to the GCP Console and edit an already created VM, scroll down and paste the key value in the SSH Keys section, and save it.
-
-### Task 4: Connect Instance with PuTTY
-
-1. Search for PuTTY software on your laptop and open PuTTY.
-2. In the PuTTY Configuration window, paste the Public IP of the control-workstation in the Hostname (or IP Address) field.
-3. Then expand the SSH section and select Auth, click on the Browse button to select your `ansible_privatekey.ppk` file, and click Open.
-4. Click Yes on the PuTTY Security Alert window.
-5. Log in as `ec2-user`. After the successful login, run the below command.
-
-### Task 5: Execute the Following Commands for Installing the Ansible Server
+### Task 2: Execute the Following Commands for Installing the Ansible Server
 
 1. Set hostname as “ansible-workstation” by using the below command and restart the PuTTY session:
     ```bash
