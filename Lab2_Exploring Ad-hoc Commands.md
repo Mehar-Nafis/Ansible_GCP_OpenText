@@ -120,13 +120,4 @@ Use the following command to copy the test file to the directory that we created
 ansible <Private_IP_node1> -m copy -a "src=test.txt dest=/home/ansible-new/test" --become
 ```
 
-### Step 10: Remove the Localhost Entry from the Hosts File
-Now, remove the localhost entry from the hosts file:
-```
-sudo vi /etc/ansible/hosts
-```
-After removing the entry, the file should look as below:
-```
-10.142.0.9
-10.142.0.10
-```
+
