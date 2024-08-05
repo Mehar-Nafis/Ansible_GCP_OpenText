@@ -125,7 +125,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
         - myvariables.yml
       tasks:
         - name: Install defined package
-          yum:
+          apt:
             name: '{{ package1 }}'
             update_cache: yes
             state: latest
