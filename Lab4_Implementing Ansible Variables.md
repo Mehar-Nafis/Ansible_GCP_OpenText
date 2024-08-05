@@ -63,7 +63,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 5. **Change to the `file` directory and run the playbook to see the implementation of variables**
 
     ```sh
-    cd lab4 && ansible-playbook implement-vars.yml
+    ansible-playbook implement-vars.yml
     ```
 
 6. **Use the public IP of any of the Ansible managed instances to view the webpage**
