@@ -170,7 +170,7 @@
 3. Run the playbook. Notice that the output of the command is shown along with the Ansible until command output
 
     ```sh
-    sudo ansible-playbook untillab.yml
+    ansible-playbook untillab.yml
     ```
 
 ### Task 5: Run Once with Ansible Playbook
