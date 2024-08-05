@@ -147,30 +147,31 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 
 4. Use the public IP of any of the Ansible managed instances to view the webpage**
 
-## Lab 6 Task Inclusion
 
-1. **Create a file named `second.yaml` with the below contents which has a list of tasks to install and start httpd (Apache) service**
+### Task 4: Task Inclusion
+
+1. Create a file named `second.yaml` with the below contents which has a list of tasks to install and start Apache service
 
     ```sh
-    $ sudo vi second.yaml
+    sudo vi second.yaml
     ```
 
     ```yaml
     ---
-    - name: Install the httpd package
-      yum:
-        name: httpd
+    - name: Install the apache package
+      apt:
+        name: apache2
         state: latest
         update_cache: yes
 
-    - name: Start the httpd service
+    - name: Start the apache service
       service:
-        name: httpd
+        name: apache2
         state: started
         enabled: yes
     ```
 
-2. **Create another playbook named `first.yaml`, which includes the earlier created task (`second.yaml`)**
+2. Create another playbook named `first.yaml`, which includes the earlier created task (`second.yaml`)
 
     ```sh
     $ sudo vi first.yaml
@@ -183,15 +184,15 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
       become: yes
       tasks:
         - name: Install common packages
-          yum:
+          apt:
             name: [wget, curl]
             state: present
 
-        - name: Include task for httpd installation
+        - name: Include task for apache installation
           include_tasks: second.yaml
     ```
 
-3. **Execute the playbook named `first.yaml` using the below command**
+3. Execute the playbook named `first.yaml` using the below command
 
     ```sh
     $ ansible-playbook first.yaml
@@ -199,7 +200,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 
     You will notice in the output that it is also executing the plays/tasks in the `second.yaml`.
 
-4. **Create another playbook named `third.yaml` as below**
+4. Create another playbook named `third.yaml` as below
 
     ```sh
     $ sudo vi third.yaml
@@ -212,7 +213,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
       become: yes
       tasks:
         - name: Install common packages
-          yum:
+          apt:
             name: [wget, curl]
             state: present
           register: out
@@ -226,10 +227,9 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
           when: out.rc == 0
     ```
 
-5. **Execute the playbook using the below command**
+5. Execute the playbook using the below command
 
     ```sh
-    $ ansible-playbook third.yaml
+    ansible-playbook third.yaml
     ```
 
-Save the above content into a file with a `.md` extension, for example, `Lab3_Implementing_Ansible_Variables.md`.
