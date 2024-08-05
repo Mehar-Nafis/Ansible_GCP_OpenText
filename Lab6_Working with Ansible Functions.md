@@ -63,7 +63,7 @@
       gather_facts: no
       tasks:
         - name: Install telnet
-          yum:
+          apt:
             pkg: telnet
             state: latest
           tags:
