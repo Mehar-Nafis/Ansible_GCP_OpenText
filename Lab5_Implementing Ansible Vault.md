@@ -42,7 +42,7 @@ In this lab, we will create a sample playbook and perform vault operations using
 5. To view the encrypted playbook, use the following command and provide the password:
 
     ```sh
-    ansible-vault view implement-vault.yml
+    sudo ansible-vault view implement-vault.yml
     ```
 
 6. Execute the encrypted playbook by using the following command and providing the vault password:
