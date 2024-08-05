@@ -69,9 +69,9 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 6. Use the public IP of any of the Ansible managed instances to view the webpage**
 
 
-## Task 2: Implementing Ansible Variables Using `extra-vars` Option
+### Task 2: Implementing Ansible Variables Using `extra-vars` Option
 
-1. **Create a file `index1.html` and copy the following contents into that file**
+1. Create a file `index1.html` and copy the following contents into that file**
 
     ```sh
     sudo vi index1.html
@@ -86,34 +86,35 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
     </html>
     ```
 
-2. **Implement the playbook using the following command**
+2. Implement the playbook using the following command**
 
     ```sh
-    $ ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/labs/file/index1.html"
+    ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/labs/file/index1.html"
     ```
 
-3. **Use the public IP of any of the Ansible managed instances to view the webpage**
+3. Use the public IP of any of the Ansible managed instances to view the webpage**
 
-## Task 3: Configuring Variables as a Separate File and Implementing Ansible Playbook
 
-1. **Create a file `myvariables.yml` and add your variables**
+### Task 3: Configuring Variables as a Separate File and Implementing Ansible Playbook
+
+1. Create a file `myvariables.yml` and add your variables**
 
     ```sh
-    $ sudo vi myvariables.yml
+    sudo vi myvariables.yml
     ```
 
     ```yaml
     ---
     hostname: all
-    package1: httpd
+    package1: apache2
     destination: /var/www/html/index.html
-    source: /home/ec2-user/labs/index.html
+    source: /home/ubuntu/labs/lab4/index.html
     ```
 
-2. **Modify the `implement-vars.yml` with the below-mentioned changes**
+2. Modify the `implement-vars.yml` with the below-mentioned changes**
 
     ```sh
-    $ sudo vi implement-vars.yml
+    sudo vi implement-vars.yml
     ```
 
     ```yaml
@@ -138,13 +139,13 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
             dest: '{{ destination }}'
     ```
 
-3. **Implement the Ansible playbook with the following command**
+3. Implement the Ansible playbook with the following command**
 
     ```sh
     $ ansible-playbook implement-vars.yml
     ```
 
-4. **Use the public IP of any of the Ansible managed instances to view the webpage**
+4. Use the public IP of any of the Ansible managed instances to view the webpage**
 
 ## Lab 6 Task Inclusion
 
