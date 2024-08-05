@@ -7,7 +7,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 1. **Create and change into the "file" directory inside the "labs" directory**
 
     ```sh
-    sudo cd ~/labs/
+    cd ~/labs/
     ```
     ```sh
     sudo mkdir lab4 && cd lab4
