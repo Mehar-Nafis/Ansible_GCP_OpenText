@@ -99,7 +99,7 @@
 1. Create and edit `promptlab.yml` in the same directory
 
     ```sh
-    vi promptlab.yml
+    sudo vi promptlab.yml
     ```
 
 2. Enter the contents of the file as shown below:
