@@ -7,7 +7,10 @@ In this lab, we will be creating our first playbook to install and configure the
 1. **Create a new directory `labs` in the `/home/ec2-user` directory**
 
     ```sh
-    sudo mkdir /home/ubuntu/labs/lab3 && cd /home/ubuntu/labs/lab3
+    sudo mkdir /home/ubuntu/labs && cd /home/ubuntu/labs
+    ```
+    ```sh
+    sudo mkdir lab3 && cd lab3
     ```
 
 2. **Create a new file `install-apache-pb.yml` (the playbook)**
