@@ -35,7 +35,7 @@
 4. Run the Ansible playbook
 
     ```sh
-    sudo ansible-playbook looplab.yml
+    ansible-playbook looplab.yml
     ```
 
 5. Verify if the users mentioned in the list were added by using an Ansible ad-hoc command
