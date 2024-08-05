@@ -2,7 +2,7 @@
 
 In this lab, we will create a sample playbook and perform vault operations using Ansible Vault.
 
-### Step 
+### Steps
 
 1. Navigate to the `labs` directory and create a playbook named `implement-vault.yml`:
 
