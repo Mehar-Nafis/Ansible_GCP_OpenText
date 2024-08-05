@@ -46,7 +46,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
             dest: '{{ destination }}'
     ```
 
-4. **Change back to the `labs` directory and create a file called `index.html`**
+4. Create a file called `index.html`**
 
     Add your contents that you want to display on the webpage and save the file.
 
