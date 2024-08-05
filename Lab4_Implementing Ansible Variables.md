@@ -27,12 +27,12 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
       become: yes
       vars:
         hostname: all
-        package1: httpd
+        package1: apache2
         destination: /var/www/html/index.html
         source: /home/ec2-user/labs/index.html
       tasks:
         - name: Install defined package
-          yum:
+          apt:
             name: '{{ package1 }}'
             update_cache: yes
             state: latest
@@ -40,7 +40,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
           service:
             name: '{{ package1 }}'
             state: started
-        - name: Copy required index.html to the document folder for httpd
+        - name: Copy required index.html to the document folder for apache2
           copy:
             src: '{{ source }}'
             dest: '{{ destination }}'
@@ -53,8 +53,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 5. **Change to the `file` directory and run the playbook to see the implementation of variables**
 
     ```sh
-    $ cd file
-    $ ansible-playbook implement-vars.yml
+    cd lab4 && ansible-playbook implement-vars.yml
     ```
 
 6. **Use the public IP of any of the Ansible managed instances to view the webpage**
