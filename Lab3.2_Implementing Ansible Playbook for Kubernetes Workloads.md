@@ -5,15 +5,22 @@
 Before you begin, ensure you have the following prerequisites:
 
 1. Ansible installed on your control machine.
-2. Access to a Kubernetes cluster.
+2. GKE CLuster us and running.
 3. The `kubernetes.core` collection installed. You can install it using:
-  ```bash
+   ```bash
    ansible-galaxy collection install kubernetes.core
    ```
-5. Install kubectl on ansible-server
+4. Install kubectl on ansible-server
    ```sh
    sudo snap install kubectl --classic
-   ``` 
+   ```
+5. Install gcloud cli and authenticate
+   ```sh
+   sudo snap install google-cloud-cli --classic
+   ```
+   ```sh 
+   gcloud init
+   ```
 
 
 ### Steps
