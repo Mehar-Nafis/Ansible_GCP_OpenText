@@ -1,16 +1,18 @@
-# Lab 3: Implementing Ansible Variables
+## Lab 3: Implementing Ansible Variables
 
 In this lab, we will learn how to use variables in Ansible inside the playbook.
 
-## Task 1: Configuring Packages in Ansible Using Variables
+### Task 1: Configuring Packages in Ansible Using Variables
 
 1. **Create and change into the "file" directory inside the "labs" directory**
 
     ```sh
-    $ sudo cd ~/labs/
-    $ sudo mkdir file && cd file
+    sudo cd ~/labs/
     ```
-
+    ```sh
+    sudo mkdir lab4 && cd lab4
+    ```
+   
 2. **Create a new playbook for implementing variables**
 
     ```sh
