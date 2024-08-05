@@ -217,14 +217,14 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
             name: [wget, curl]
             state: present
           register: out
-
+    
         - name: List result of previous task
           debug:
-            msg: "{{ out.rc }}"
-
+            msg: "{{ out }}"
+    
         - name: Include task for httpd installation
           include_tasks: second.yaml
-          when: out.rc == 0
+          when: out.changed
     ```
 
 5. Execute the playbook using the below command
