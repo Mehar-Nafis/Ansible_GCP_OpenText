@@ -62,16 +62,20 @@
       connection: ssh
       gather_facts: no
       tasks:
+        - name: Update apt cache
+          apt:
+            update_cache: yes
+            cache_valid_time: 3600  # Cache validity time in seconds
+          tags:
+            - packages
+    
         - name: Install telnet
           apt:
-            pkg: telnet
+            name: telnet
             state: latest
           tags:
             - packages
-        - name: Verifying telnet installation
-          raw: apt list installed | grep telnet > /home/ubuntu/pkg.log
-          tags:
-            - logging
+
     ```
 
 3. Run the playbook
