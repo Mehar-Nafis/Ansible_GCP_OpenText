@@ -27,7 +27,7 @@ In this lab, we will be creating our first playbook to install and configure the
       hosts: all
       become: yes
       tasks:
-        - name: Task1 will install httpd using yum
+        - name: Task1 will install httpd using apt
           apt:
             name: httpd
             update_cache: yes
