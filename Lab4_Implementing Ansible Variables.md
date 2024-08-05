@@ -48,7 +48,17 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 
 4. Create a file called `index.html`**
 
-    Add your contents that you want to display on the webpage and save the file.
+    ```sh
+    sudo vi index.html
+    ```
+    ```
+    <html>
+      <body>
+        <h1>Welcome to CloudThat</h1>
+        <img src="https://d3ffutjd2e35ce.cloudfront.net/assets/logo1.png">
+      </body>
+    </html>
+    ```
 
 5. **Change to the `file` directory and run the playbook to see the implementation of variables**
 
