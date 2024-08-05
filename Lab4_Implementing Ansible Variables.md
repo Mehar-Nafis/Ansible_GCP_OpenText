@@ -174,7 +174,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 2. Create another playbook named `first.yaml`, which includes the earlier created task (`second.yaml`)
 
     ```sh
-    $ sudo vi first.yaml
+    sudo vi first.yaml
     ```
 
     ```yaml
@@ -203,7 +203,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 4. Create another playbook named `third.yaml` as below
 
     ```sh
-    $ sudo vi third.yaml
+    sudo vi third.yaml
     ```
 
     ```yaml
