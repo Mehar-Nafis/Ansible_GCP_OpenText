@@ -1,26 +1,26 @@
-# Lab 8: Working with Ansible Functions
+## Lab 6: Working with Ansible Functions
 
-## Task 1: Loops with Ansible Playbook
+### Task 1: Loops with Ansible Playbook
 
-1. **Make the present working directory as labs**
-
-    ```sh
-    cd /home/ubuntu/labs
-    ```
-
-2. **Create and edit `looplab.yml` to define the loop to add a list of users**
+1. Make the present working directory as labs
 
     ```sh
-    vi looplab.yml
+    cd /home/ubuntu/labs && mkdir lab6 && cm lab6
     ```
 
-3. **Enter the contents of the file as shown below:**
+2. Create and edit `looplab.yml` to define the loop to add a list of users
+
+    ```sh
+    sudo vi looplab.yml
+    ```
+
+3. Enter the contents of the file as shown below:
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
+      user: ubuntu
       connection: ssh
       tasks:
         - name: Adding a number of users
@@ -33,33 +33,34 @@
             - userZ
     ```
 
-4. **Run the Ansible playbook**
+4. Run the Ansible playbook
 
     ```sh
-    ansible-playbook looplab.yml
+    sudo ansible-playbook looplab.yml
     ```
 
-5. **Verify if the users mentioned in the list were added by using an Ansible ad-hoc command**
+5. Verify if the users mentioned in the list were added by using an Ansible ad-hoc command
 
     ```sh
     ansible all -a "tail -n 3 /etc/passwd"
     ```
 
-## Task 2: Tags with Ansible Playbooks
 
-1. **Create and edit `tagslabs.yml` in the same `labs` directory**
+### Task 2: Tags with Ansible Playbooks
+
+1. Create and edit `tagslabs.yml` in the same `labs` directory
 
     ```sh
     vi tagslabs.yml
     ```
 
-2. **Enter the contents of the file as shown below:**
+2. Enter the contents of the file as shown below
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
+      user: ubuntu
       connection: ssh
       gather_facts: no
       tasks:
@@ -70,42 +71,42 @@
           tags:
             - packages
         - name: Verifying telnet installation
-          raw: yum list installed | grep telnet > /home/ec2-user/pkg.log
+          raw: apt list installed | grep telnet > /home/ubuntu/pkg.log
           tags:
             - logging
     ```
 
-3. **Run the playbook**
+3. Run the playbook
 
     ```sh
-    ansible-playbook tagslabs.yml
+    sudo ansible-playbook tagslabs.yml
     ```
 
-4. **Run the playbook again, this time using tags. Notice that only the tasks associated with the mentioned tags are running**
+4. Run the playbook again, this time using tags. Notice that only the tasks associated with the mentioned tags are running
 
     ```sh
-    ansible-playbook -t "logging" tagslabs.yml
+    sudo ansible-playbook -t "logging" tagslabs.yml
     ```
 
     ```sh
     ansible-playbook -t "packages" tagslabs.yml
     ```
 
-## Task 3: Prompts with Ansible Playbooks
+### Task 3: Prompts with Ansible Playbooks
 
-1. **Create and edit `promptlab.yml` in the same `labs` directory**
+1. Create and edit `promptlab.yml` in the same `labs` directory
 
     ```sh
     vi promptlab.yml
     ```
 
-2. **Enter the contents of the file as shown below:**
+2. Enter the contents of the file as shown below:
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
+      user: ubuntu
       connection: ssh
       vars_prompt:
         - name: pkginstall
@@ -119,97 +120,97 @@
             state: latest
     ```
 
-3. **When the playbook is run, the user will be presented with a prompt. The package entered will be installed**
+3. When the playbook is run, the user will be presented with a prompt. The package entered will be installed
 
     ```sh
-    ansible-playbook promptlab.yml
+    sudo ansible-playbook promptlab.yml
     ```
 
-4. **Verify if the specified package httpd is installed. SSH into one of the machines and verify using the command shown below:**
+4. Verify if the specified package apache is installed. SSH into one of the machines and verify using the command shown below:
 
     ```sh
-    ssh ec2-user@<managed_node_private_ip>
+    ssh ubuntu@<managed_node_private_ip>
     ```
 
     ```sh
-    rpm -qa | grep httpd
+    rpm -qa | grep apache
     ```
 
     Similarly, installation on the other client machine can be verified as well.
 
-## Task 4: Until with Ansible Playbooks
+### Task 4: Until with Ansible Playbooks
 
-1. **Create and edit `untillab.yml` in the same `labs` directory**
+1. Create and edit `untillab.yml` in the same `labs` directory
 
     ```sh
-    vi untillab.yml
+    sudo vi untillab.yml
     ```
 
-2. **Enter the contents of the file, as shown below. It checks if `httpd` service is running three times with a 5-second delay**
+2. Enter the contents of the file, as shown below. It checks if `apacche` service is running three times with a 5-second delay
 
     ```yaml
     ---
     - hosts: all
       become: yes
       connection: ssh
-      user: ec2-user
+      user: ubuntu
       tasks:
         - name: Install Apache Web Server
           yum:
-            name: httpd
+            name: apache2
             state: latest
         - name: Verify Status of Service
-          shell: systemctl status httpd
+          shell: systemctl status apache2
           register: result
           until: result.stdout.find("active (running)") != -1
           retries: 3
           delay: 5
     ```
 
-3. **Run the playbook. Notice that the output of the command is shown along with the Ansible until command output**
+3. Run the playbook. Notice that the output of the command is shown along with the Ansible until command output
 
     ```sh
-    ansible-playbook untillab.yml
+    sudo ansible-playbook untillab.yml
     ```
 
-## Task 5: Run Once with Ansible Playbook
+### Task 5: Run Once with Ansible Playbook
 
-1. **Create and edit `rolab.yml` in the same `labs` directory**
+1. Create and edit `rolab.yml` in the same `labs` directory
 
     ```sh
-    vi rolab.yml
+    sudo vi rolab.yml
     ```
 
-2. **Enter the contents of the file, as shown below. It will record the uptime of the first machine at `/home/ec2-user/uptime`**
+2. Enter the contents of the file, as shown below. It will record the uptime of the first machine at `/home/ec2-user/uptime`
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
+      user: ubuntu
       connection: ssh
       gather_facts: no
       tasks:
         - name: Recording uptime on all machines
-          raw: /usr/bin/uptime >> /home/ec2-user/uptime
+          raw: /usr/bin/uptime >> /home/ubuntu/uptime
           run_once: true
     ```
 
-3. **Run the playbook**
+3. Run the playbook
 
     ```sh
-    ansible-playbook rolab.yml
+    sudo ansible-playbook rolab.yml
     ```
 
-4. **Verify if the file exists and has the right contents on either of the client machines**
+4. Verify if the file exists and has the right contents on either of the client machines
 
     ```sh
-    ansible <managed_node_private_ip> -a "cat /home/ec2-user/uptime"
+    ansible <managed_node_private_ip> -a "cat /home/ubuntu/uptime"
     ```
 
-## Task 6: Blocks with Ansible Playbook
+### Task 6: Blocks with Ansible Playbook
 
-1. **Create and edit `blklab.yml` in the same `labs` directory**
+1. Create and edit `blklab.yml` in the same `labs` directory
 
     ```sh
     vi blklab.yml
