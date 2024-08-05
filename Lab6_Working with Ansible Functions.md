@@ -5,7 +5,7 @@
 1. Make the present working directory as labs
 
     ```sh
-    cd /home/ubuntu/labs && mkdir lab6 && cm lab6
+    cd /home/ubuntu/labs && sudo mkdir lab6 && cd lab6
     ```
 
 2. Create and edit `looplab.yml` to define the loop to add a list of users
