@@ -34,7 +34,7 @@ In this lab, we will create a sample playbook and perform vault operations using
 3. Encrypt the playbook using the vault utility:
 
     ```sh
-    ansible-vault encrypt implement-vault.yml
+    sudo ansible-vault encrypt implement-vault.yml
     ```
 
 4. Provide a password of your choice when prompted, and confirm it.
