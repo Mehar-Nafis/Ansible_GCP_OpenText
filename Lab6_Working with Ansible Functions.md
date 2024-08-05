@@ -96,7 +96,7 @@
 
 ### Task 3: Prompts with Ansible Playbooks
 
-1. Create and edit `promptlab.yml` in the same `labs` directory
+1. Create and edit `promptlab.yml` in the same directory
 
     ```sh
     vi promptlab.yml
