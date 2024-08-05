@@ -89,7 +89,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 2. Implement the playbook using the following command**
 
     ```sh
-    ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/labs/file/index1.html"
+    ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/labs/lab4/index1.html"
     ```
 
 3. Use the public IP of any of the Ansible managed instances to view the webpage**
