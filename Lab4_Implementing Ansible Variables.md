@@ -29,7 +29,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
         hostname: all
         package1: apache2
         destination: /var/www/html/index.html
-        source: /home/ec2-user/labs/index.html
+        source: /home/ubuntu/labs/lab4/index.html
       tasks:
         - name: Install defined package
           apt:
