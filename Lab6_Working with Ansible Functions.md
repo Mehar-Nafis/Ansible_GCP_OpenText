@@ -20,7 +20,6 @@
     ---
     - hosts: all
       become: yes
-      user: ubuntu
       connection: ssh
       tasks:
         - name: Adding a number of users
