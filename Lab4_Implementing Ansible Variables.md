@@ -195,7 +195,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 3. Execute the playbook named `first.yaml` using the below command
 
     ```sh
-    $ ansible-playbook first.yaml
+    ansible-playbook first.yaml
     ```
 
     You will notice in the output that it is also executing the plays/tasks in the `second.yaml`.
