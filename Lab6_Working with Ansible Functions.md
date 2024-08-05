@@ -50,7 +50,7 @@
 1. Create and edit `tagslabs.yml` in the same `labs` directory
 
     ```sh
-    vi tagslabs.yml
+    sudo vi tagslabs.yml
     ```
 
 2. Enter the contents of the file as shown below
