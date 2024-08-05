@@ -187,7 +187,6 @@
     ---
     - hosts: all
       become: yes
-      user: ubuntu
       connection: ssh
       gather_facts: no
       tasks:
@@ -213,27 +212,26 @@
 1. Create and edit `blklab.yml` in the same `labs` directory
 
     ```sh
-    vi blklab.yml
+    sudo vi blklab.yml
     ```
 
-2. **Enter the contents of the file, as shown below. Notice that the `web_package` variable is an invalid package. Due to the invalid package in a block, tasks under rescue will run**
+2. Enter the contents of the file, as shown below. Notice that the `web_package` variable is an invalid package. Due to the invalid package in a block, tasks under rescue will run
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
       connection: ssh
       gather_facts: no
       tasks:
         - block:
             - name: Install {{ web_package }} package
-              yum:
+              apt:
                 name: "{{ web_package }}"
                 state: latest
           rescue:
             - name: Install {{ db_package }} package
-              yum:
+              apt:
                 name: "{{ db_package }}"
                 state: latest
           always:
@@ -242,39 +240,38 @@
                 name: "{{ db_service }}"
                 state: started
       vars:
-        web_package: http
+        web_package: apache2
         db_package: mariadb-server
         db_service: mariadb
     ```
 
-3. **Run the Playbook and see that Block tasks fail and that Rescue tasks are running due to the failure of block tasks. The Always tasks run independently**
+3. Run the Playbook and see that Block tasks fail and that Rescue tasks are running due to the failure of block tasks. The Always tasks run independently
 
     ```sh
     ansible-playbook blklab.yml
     ```
 
-4. **Now fix the package name in the Playbook and run the Playbook again**
+4. Now fix the package name in the Playbook and run the Playbook again
 
     ```sh
-    vi blklab.yml
+    sudo vi blklab.yml
     ```
 
     ```yaml
     ---
     - hosts: all
       become: yes
-      user: ec2-user
       connection: ssh
       gather_facts: no
       tasks:
         - block:
             - name: Install {{ web_package }} package
-              yum:
+              apt:
                 name: "{{ web_package }}"
                 state: latest
           rescue:
             - name: Install {{ db_package }} package
-              yum:
+              apt:
                 name: "{{ db_package }}"
                 state: latest
           always:
@@ -283,7 +280,7 @@
                 name: "{{ db_service }}"
                 state: started
       vars:
-        web_package: httpd
+        web_package: apache2
         db_package: mariadb-server
         db_service: mariadb
     ```
@@ -292,4 +289,4 @@
     ansible-playbook blklab.yml
     ```
 
-5. **Notice that the tasks under rescue are not running as block tasks ran successfully.**
+5. Notice that the tasks under rescue are not running as block tasks ran successfully.
