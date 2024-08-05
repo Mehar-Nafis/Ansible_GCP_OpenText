@@ -76,7 +76,7 @@ In this lab, we will create a sample playbook and perform vault operations using
 11. To change the vault password, use the following command and provide both the old and new passwords:
 
     ```sh
-    ansible-vault rekey implement-vault.yml
+    sudo  ansible-vault rekey implement-vault.yml
     ```
 
 12. To view the encrypted file's content, use the `cat` command:
