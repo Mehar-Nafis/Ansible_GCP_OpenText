@@ -108,7 +108,6 @@
     ---
     - hosts: all
       become: yes
-      user: ubuntu
       connection: ssh
       vars_prompt:
         - name: pkginstall
@@ -117,7 +116,7 @@
           private: no
       tasks:
         - name: Install the package specified
-          yum:
+          apt:
             pkg: "{{ pkginstall }}"
             state: latest
     ```
@@ -125,7 +124,7 @@
 3. When the playbook is run, the user will be presented with a prompt. The package entered will be installed
 
     ```sh
-    sudo ansible-playbook promptlab.yml
+    ansible-playbook promptlab.yml
     ```
 
 4. Verify if the specified package apache is installed. SSH into one of the machines and verify using the command shown below:
@@ -135,7 +134,7 @@
     ```
 
     ```sh
-    rpm -qa | grep apache
+    dpkg -l | grep apache
     ```
 
     Similarly, installation on the other client machine can be verified as well.
