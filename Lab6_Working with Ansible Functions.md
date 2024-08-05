@@ -198,7 +198,7 @@
 3. Run the playbook
 
     ```sh
-    sudo ansible-playbook rolab.yml
+    ansible-playbook rolab.yml
     ```
 
 4. Verify if the file exists and has the right contents on either of the client machines
