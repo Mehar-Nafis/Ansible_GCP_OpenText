@@ -7,7 +7,12 @@ In this lab, we will create a sample playbook and perform vault operations using
 1. Navigate to the `labs` directory and create a playbook named `implement-vault.yml`:
 
     ```sh
-    cd labs
+    cd /home/ubuntu/labs
+    ```
+    ```sh
+    sudo mkdir lab4 && cd lab4
+    ```
+    ```sh
     sudo vi implement-vault.yml
     ```
 
