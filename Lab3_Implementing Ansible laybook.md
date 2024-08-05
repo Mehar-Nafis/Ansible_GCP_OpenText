@@ -28,7 +28,7 @@ In this lab, we will be creating our first playbook to install and configure the
       become: yes
       tasks:
         - name: Task1 will install httpd using yum
-          yum:
+          apt:
             name: httpd
             update_cache: yes
             state: latest
