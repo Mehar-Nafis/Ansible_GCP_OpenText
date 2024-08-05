@@ -29,7 +29,7 @@ In this lab, we will be creating our first playbook to install and configure the
       tasks:
         - name: Task1 will install httpd using apt
           apt:
-            name: httpd
+            name: apache2
             update_cache: yes
             state: latest
         - name: Task2 will upload custom index.html into all hosts
