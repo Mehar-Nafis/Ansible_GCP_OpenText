@@ -224,7 +224,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
     
         - name: Include task for httpd installation
           include_tasks: second.yaml
-          when: out.changed
+          when: out.failed == false
     ```
 
 5. Execute the playbook using the below command
