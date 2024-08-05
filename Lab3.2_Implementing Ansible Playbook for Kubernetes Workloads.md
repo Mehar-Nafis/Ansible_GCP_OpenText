@@ -11,8 +11,22 @@ Before you begin, ensure you have the following prerequisites:
    ansible-galaxy collection install kubernetes.core
    ```
 4. Install kubectl on ansible-server
-   ```sh
-   sudo snap install kubectl --classic
+  
+   Download the latest release of kubectl:
+   ```
+   sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   ```
+   Make the kubectl binary executable:
+   ```
+   chmod +x kubectl
+   ```
+   Move the kubectl binary to a directory in your PATH:
+   ```
+   sudo mv kubectl /usr/local/bin/
+   ```
+   Verify the installation:
+   ```
+   kubectl version --client
    ```
 5. Install gcloud cli and authenticate
    ```sh
