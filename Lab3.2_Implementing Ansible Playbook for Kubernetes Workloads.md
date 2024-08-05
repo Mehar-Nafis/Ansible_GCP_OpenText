@@ -6,11 +6,7 @@ Before you begin, ensure you have the following prerequisites:
 
 1. Ansible installed on your control machine.
 2. GKE CLuster us and running.
-3. The `kubernetes.core` collection installed. You can install it using:
-   ```bash
-   ansible-galaxy collection install kubernetes.core
-   ```
-4. Install kubectl on ansible-server
+3. Install kubectl on ansible-server
   
    Download the latest release of kubectl:
    ```
@@ -28,13 +24,8 @@ Before you begin, ensure you have the following prerequisites:
    ```
    kubectl version --client
    ```
-5. Install gcloud cli and authenticate
-   ```sh
-   sudo snap install google-cloud-cli --classic
-   ```
-   ```sh 
-   gcloud init
-   ```
+5. Install gcloud cli by following the steps given on `https://cloud.google.com/sdk/docs/install`
+ 
  6. Configure your server to communicate with the GKE cluster. The below cluster has already been creatd with Terraform
     ```
     gcloud container clusters get-credentials ninad-gke-cluster --zone us-central1-c --project deloitte-team2
