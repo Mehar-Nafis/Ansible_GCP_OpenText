@@ -10,7 +10,7 @@ In this lab, we will create a sample playbook and perform vault operations using
     cd /home/ubuntu/labs
     ```
     ```sh
-    sudo mkdir lab4 && cd lab4
+    sudo mkdir lab5 && cd lab5
     ```
     ```sh
     sudo vi implement-vault.yml
