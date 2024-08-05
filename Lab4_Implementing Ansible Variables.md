@@ -4,7 +4,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 
 ### Task 1: Configuring Packages in Ansible Using Variables
 
-1. **Create and change into the "file" directory inside the "labs" directory**
+1. Create and change into the "file" directory inside the "labs" directory**
 
     ```sh
     cd /home/ubuntu/labs/
@@ -13,13 +13,13 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
     sudo mkdir lab4 && cd lab4
     ```
    
-2. **Create a new playbook for implementing variables**
+2. Create a new playbook for implementing variables**
 
     ```sh
     sudo vi implement-vars.yml
     ```
 
-3. **Add the following content to the `implement-vars.yml` file**
+3. Add the following content to the `implement-vars.yml` file**
 
     ```yaml
     ---
@@ -60,13 +60,13 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
     </html>
     ```
 
-5. **Change to the `file` directory and run the playbook to see the implementation of variables**
+5. Change to the `file` directory and run the playbook to see the implementation of variables**
 
     ```sh
     ansible-playbook implement-vars.yml
     ```
 
-6. **Use the public IP of any of the Ansible managed instances to view the webpage**
+6. Use the public IP of any of the Ansible managed instances to view the webpage**
 
 
 ## Task 2: Implementing Ansible Variables Using `extra-vars` Option
