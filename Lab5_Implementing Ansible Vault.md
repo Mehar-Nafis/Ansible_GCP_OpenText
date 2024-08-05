@@ -24,10 +24,10 @@ In this lab, we will create a sample playbook and perform vault operations using
 
       tasks: 
         - file: 
-            path: /home/ec2-user/test.conf 
+            path: /home/ubuntu/labs/lab5/test.conf 
             state: touch 
-            owner: ec2-user 
-            group: ec2-user 
+            owner: ubuntu 
+            group: ubuntu 
             mode: 0644
     ```
 
