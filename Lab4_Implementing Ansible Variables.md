@@ -51,7 +51,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
     ```sh
     sudo vi index.html
     ```
-    ```
+    ```html
     <html>
       <body>
         <h1>Welcome to CloudThat</h1>
