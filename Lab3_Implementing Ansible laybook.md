@@ -1,8 +1,8 @@
-# Lab 3: Implementing Ansible Playbook
+## Lab 3: Implementing Ansible Playbook
 
 In this lab, we will be creating our first playbook to install and configure the Apache web server and will execute the playbook.
 
-## Steps
+### Steps
 
 1. **Create a new directory `labs` in the `/home/ec2-user` directory**
 
