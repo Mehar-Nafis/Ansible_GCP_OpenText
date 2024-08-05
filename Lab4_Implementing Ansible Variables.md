@@ -16,7 +16,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 2. **Create a new playbook for implementing variables**
 
     ```sh
-    $ sudo vi implement-vars.yml
+    sudo vi implement-vars.yml
     ```
 
 3. **Add the following content to the `implement-vars.yml` file**
