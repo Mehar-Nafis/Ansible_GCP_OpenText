@@ -48,13 +48,13 @@ In this lab, we will create a sample playbook and perform vault operations using
 6. Execute the encrypted playbook by using the following command and providing the vault password:
 
     ```sh
-    ansible-playbook --ask-vault-pass implement-vault.yml
+    sudo ansible-playbook --ask-vault-pass implement-vault.yml
     ```
 
 7. Edit the playbook with the vault password:
 
     ```sh
-    ansible-vault edit implement-vault.yml
+    sudo ansible-vault edit implement-vault.yml
     ```
 
 8. Replace the `mode` line with the following and save the playbook:
