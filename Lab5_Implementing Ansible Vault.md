@@ -24,7 +24,7 @@ In this lab, we will create a sample playbook and perform vault operations using
 
       tasks: 
         - file: 
-            path: /home/ubuntu/labs/lab5/test.conf 
+            path: /home/ubuntu/test.conf 
             state: touch 
             owner: ubuntu 
             group: ubuntu 
