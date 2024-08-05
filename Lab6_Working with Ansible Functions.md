@@ -59,7 +59,6 @@
     ---
     - hosts: all
       become: yes
-      user: ubuntu
       connection: ssh
       gather_facts: no
       tasks:
