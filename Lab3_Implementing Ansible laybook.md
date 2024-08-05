@@ -22,30 +22,30 @@ In this lab, we will be creating our first playbook to install and configure the
 3. **Add the below code to the newly created playbook:**
 
     ```yaml
-    ---
-    - name: This play will install apache web servers on all the hosts
-      hosts: all
-      become: yes
-      tasks:
-        - name: Task1 will install httpd using apt
-          apt:
-            name: apache2
-            update_cache: yes
-            state: latest
-        - name: Task2 will upload custom index.html into all hosts
-          copy:
-            src: "index.html"
-            dest: "/var/www/html/index.html"
-        - name: Task3 will setup attributes for file
-          file:
-            path: /var/www/html/index.html
-            owner: apache
-            group: apache
-            mode: 0644
-        - name: Task4 will start the httpd
-          service:
-            name: httpd
-            state: started
+---
+- name: This play will install apache web servers on all the hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: Task1 will install apache2 using apt
+      apt:
+        name: apache2
+        update_cache: yes
+        state: latest
+    - name: Task2 will upload custom index.html into all hosts
+      copy:
+        src: "index.html"
+        dest: "/var/www/html/index.html"
+    - name: Task3 will setup attributes for file
+      file:
+        path: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: 0644
+    - name: Task4 will start apache2
+      service:
+        name: apache2
+        state: started
     ```
 
 4. **Save and exit the file after adding the content**
