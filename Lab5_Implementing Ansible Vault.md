@@ -50,38 +50,42 @@ In this lab, we will create a sample playbook and perform vault operations using
     ```sh
     sudo ansible-playbook --ask-vault-pass implement-vault.yml
     ```
+    If the above command gives permission error, change the permissions by the below command and re-execute
+   ```sh
+    sudo chown ubuntu:ubuntu /home/ubuntu/labs/lab5/implement-vault.yml
+    sudo chmod 644 /home/ubuntu/labs/lab5/implement-vault.yml
 
-7. Edit the playbook with the vault password:
+8. Edit the playbook with the vault password:
 
     ```sh
     sudo ansible-vault edit implement-vault.yml
     ```
 
-8. Replace the `mode` line with the following and save the playbook:
+9. Replace the `mode` line with the following and save the playbook:
 
     ```yaml
     mode: "u=rw,g=r,o=r"
     ```
 
-9. Execute the playbook again with the same command:
+10. Execute the playbook again with the same command:
 
     ```sh
     ansible-playbook --ask-vault-pass implement-vault.yml
     ```
 
-10. To change the vault password, use the following command and provide both the old and new passwords:
+11. To change the vault password, use the following command and provide both the old and new passwords:
 
     ```sh
     ansible-vault rekey implement-vault.yml
     ```
 
-11. To view the encrypted file's content, use the `cat` command:
+12. To view the encrypted file's content, use the `cat` command:
 
     ```sh
     cat implement-vault.yml
     ```
 
-12. Decrypt the file to view its content in plain text:
+13. Decrypt the file to view its content in plain text:
 
     ```sh
     ansible-vault decrypt implement-vault.yml
