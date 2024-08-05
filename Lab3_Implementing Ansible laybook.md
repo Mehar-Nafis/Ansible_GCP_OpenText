@@ -4,7 +4,7 @@ In this lab, we will be creating our first playbook to install and configure the
 
 ### Steps
 
-1. **Create a new directory `labs` in the `/home/ec2-user` directory**
+1. **Create a new directory `labs` in the `/home/ubuntu` directory**
 
     ```sh
     sudo mkdir /home/ubuntu/labs && cd /home/ubuntu/labs
