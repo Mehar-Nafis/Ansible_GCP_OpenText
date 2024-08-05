@@ -154,10 +154,9 @@
     - hosts: all
       become: yes
       connection: ssh
-      user: ubuntu
       tasks:
         - name: Install Apache Web Server
-          yum:
+          apt:
             name: apache2
             state: latest
         - name: Verify Status of Service
