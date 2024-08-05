@@ -242,7 +242,7 @@
       vars:
         web_package: apache2
         db_package: mariadb-server
-        db_service: mariadb
+        db_service: mysql
     ```
 
 3. Run the Playbook and see that Block tasks fail and that Rescue tasks are running due to the failure of block tasks. The Always tasks run independently
@@ -282,7 +282,7 @@
       vars:
         web_package: apache2
         db_package: mariadb-server
-        db_service: mariadb
+        db_service: mysql
     ```
 
     ```sh
