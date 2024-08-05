@@ -88,8 +88,7 @@ In this lab, we will create a sample playbook and perform vault operations using
 13. Decrypt the file to view its content in plain text:
 
     ```sh
-    ansible-vault decrypt implement-vault.yml
-    cat implement-vault.yml
+    ansible-vault decrypt implement-vault.yml && sudo cat implement-vault.yml
     ```
 
 By following these steps, you have successfully created, encrypted, viewed, executed, edited, rekeyed, and decrypted an Ansible playbook using Ansible Vault.
