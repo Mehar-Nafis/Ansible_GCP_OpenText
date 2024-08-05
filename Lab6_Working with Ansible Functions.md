@@ -81,13 +81,13 @@
 3. Run the playbook
 
     ```sh
-    sudo ansible-playbook tagslabs.yml
+    ansible-playbook tagslabs.yml
     ```
 
 4. Run the playbook again, this time using tags. Notice that only the tasks associated with the mentioned tags are running
 
     ```sh
-    sudo ansible-playbook -t "logging" tagslabs.yml
+    ansible-playbook -t "logging" tagslabs.yml
     ```
 
     ```sh
