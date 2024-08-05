@@ -142,7 +142,7 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 3. Implement the Ansible playbook with the following command**
 
     ```sh
-    $ ansible-playbook implement-vars.yml
+    ansible-playbook implement-vars.yml
     ```
 
 4. Use the public IP of any of the Ansible managed instances to view the webpage**
