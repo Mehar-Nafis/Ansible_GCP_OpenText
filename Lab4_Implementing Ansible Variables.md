@@ -68,12 +68,13 @@ In this lab, we will learn how to use variables in Ansible inside the playbook.
 
 6. **Use the public IP of any of the Ansible managed instances to view the webpage**
 
+
 ## Task 2: Implementing Ansible Variables Using `extra-vars` Option
 
 1. **Create a file `index1.html` and copy the following contents into that file**
 
     ```sh
-    $ sudo vi index1.html
+    sudo vi index1.html
     ```
 
     ```html
