@@ -21,6 +21,10 @@ Before you begin, ensure you have the following prerequisites:
    ```sh 
    gcloud init
    ```
+ 6. Configure your server to communicate with the GKE cluster. The below cluster has already been creatd with Terraform
+    ```
+    gcloud container clusters get-credentials ninad-gke-cluster --zone us-central1-c --project deloitte-team2
+    ```
 
 
 ### Steps
