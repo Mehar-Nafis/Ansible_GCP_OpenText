@@ -33,59 +33,16 @@ gcloud container clusters get-credentials ninad-gke-cluster --zone us-central1-c
 kubectl get nodes
 ```
 
-
-## Ansible Directory Layout
-
-```bash
-.
-├── LICENSE                        # license file
-├── README.md                      # main documentation file
-└── ansible                        # Ansible top-level folder
-    ├── ansible.cfg                # Ansible config file
-    ├── create-k8s.yml             # Ansible playbook to provision env
-    ├── deploy-app-k8s.yml         # Ansible playbook to deploy a Nginx web-server
-    ├── destroy-k8s.yml            # Ansible playbook to destroy env
-    ├── undeploy-app-k8s.yml       # Ansible playbook to remove the Nginx web-server
-    ├── inventory             
-    │   └── gcp.yml                # Ansible inventory file
-    └── roles
-        ├── destroy_k8s            # Ansible role to remove k8s cluster        
-        │   └── tasks
-        │       └── main.yml
-        ├── destroy_k8s_deployment # Ansible role to remove the Nginx web-server
-        │       └── tasks
-        │           └── main.yml
-        ├── destroy_k8s_policies   # Ansible role to remove the k8s network policies
-        │       └── tasks
-        │           └── main.yml
-        ├── destroy_network        # Ansible role to remove VPC
-        │   └── tasks
-        │       └── main.yml
-        ├── k8s                    # Ansible role to create k8s cluster
-        │   └── tasks
-        │       └── main.yml
-        ├── k8s-deployment         # Ansible role to deploy a Nginx web-server
-        │   ├── tasks
-        │   │   └── main.yml
-        │   └── vars
-        │       └── main.yml
-        ├── k8s-policies           # Ansible role to configure k8s network policies
-        │   └── tasks
-        │       └── main.yml
-        ├── k8s-statefulset        # Ansible role to deploy a Kafka cluster
-        │   └── tasks
-        │       └── main.yml
-        └── network                # Ansible role to create VPC
-            └── tasks
-                └── main.yml
+### Steps
+1. Download the repo
+```sh
+git clone https://github.com/Mehar-Nafis/Managing-GKE-Workloads-using-Ansible-Playbook.git
 ```
 
-## How to use this repository
-
-Create a `yaml` file in the `ansible/inventory` folder to allow Ansible to interact with your `GCP` environment.
-
-Here is a sample file:
-
+2. Create a `ymll` file in the `ansible/inventory` folder to allow Ansible to interact with your `GCP` environment.
+```
+sudo vi
+```
 ```yaml
 all:
   vars:
