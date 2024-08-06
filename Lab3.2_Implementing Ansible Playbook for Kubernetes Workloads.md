@@ -36,7 +36,7 @@ kubectl get nodes
 ### Steps
 1. Download the repo
 ```sh
-git clone https://github.com/Mehar-Nafis/Managing-GKE-Workloads-using-Ansible-Playbook.git
+sudo git clone https://github.com/Mehar-Nafis/Managing-GKE-Workloads-using-Ansible-Playbook.git
 ```
 
 2. Create a `ymll` file in the `ansible/inventory` folder to allow Ansible to interact with your `GCP` environment.
