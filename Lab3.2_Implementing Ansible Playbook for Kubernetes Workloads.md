@@ -6,12 +6,32 @@ Before you begin, ensure you have the following prerequisites:
 
 1. Ansible installed on your control machine.
 2. GKE CLuster.
-3. Install gcloud cli by following the steps given on `https://cloud.google.com/sdk/docs/install`
-4. Install Kubectl by follwing the steps given on `https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#install_plugin'
-5. Configure your server to communicate with the GKE cluster. The below cluster has already been created with Terraform
-    ```
-    gcloud container clusters get-credentials ninad-gke-cluster --zone us-central1-c --project deloitte-team2
-    ```
+3. Install Required Packages and Authenticate 
+```
+snap install google-cloud-cli --classic
+```
+```
+gcloud init
+```
+```
+gcloud auth application-default login
+```
+4. Connecting to the Cluster
+```
+sudo apt-get install kubectl
+```
+```
+sudo apt-get install gke-gcloud-auth-plugin
+```
+```
+sudo apt-get install google-cloud-cli-gke-gcloud-auth-plugin
+```
+```
+gcloud container clusters get-credentials ninad-gke-cluster --zone us-central1-c --project deloitte-team2
+```
+```
+kubectl get nodes
+```
 
 
 ### Steps
