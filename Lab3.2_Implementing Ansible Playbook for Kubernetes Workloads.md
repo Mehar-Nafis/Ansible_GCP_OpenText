@@ -40,7 +40,7 @@ Setting up the Kubernetes environment.
 Deploying applications to the cluster.
 Managing Kubernetes resources such as pods, services, and deployments.
 ```sh
-mkdir workload-gke && cd workload-gke
+sudo mkdir workload-gke && cd workload-gke
 ```
 ```sh
 sudo vi k8s_playbook.yml
