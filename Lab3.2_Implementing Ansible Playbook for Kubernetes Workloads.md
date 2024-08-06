@@ -72,18 +72,7 @@ all:
     namespace: nginx
 ```
 
-Refer to Ansible documentation on [How to build your inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html) for more information.
-
 3. Deploying an application
-
-The role `k8s-deployment` contains an example of how deploy a `NGINX` container in the `Kubernetes` cluster.
-
-The role will create:
-
-- [Kubernetes Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-- [Kubernetes Pod](https://kubernetes.io/docs/concepts/workloads/pods/)
-
-Investigating the role `directory structure`, we noticed that there is a `vars` folder. We Set variables in roles to ensure a value is used in that role, and is not overridden by inventory variables. Refer to [Ansible Using Variables](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-examples) documentation for more details.
 
 Execute the following command to deploy the `Nginx` web-server:
 
