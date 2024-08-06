@@ -39,9 +39,15 @@ kubectl get nodes
 sudo git clone https://github.com/Mehar-Nafis/Managing-GKE-Workloads-using-Ansible-Playbook.git
 ```
 
-2. Create a `ymll` file in the `ansible/inventory` folder to allow Ansible to interact with your `GCP` environment.
+2. Create a `yml` file in the `ansible/inventory` folder to allow Ansible to interact with your `GCP` environment.
+```sh
+cd Managing-GKE-Workloads-using-Ansible-Playbook/ && cd ansible/
 ```
-sudo vi
+```sh
+sudo mkdir  inventory && cd inventory/
+```
+```
+sudo vi sudo vi gcp.yml
 ```
 ```yaml
 all:
