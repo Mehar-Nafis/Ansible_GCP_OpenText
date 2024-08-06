@@ -53,20 +53,9 @@ sudo vi sudo vi gcp.yml
 all:
   vars:
     # use this section to enter GCP related information
-    zone: europe-west2-c
-    region: europe-west2
-    project_id: <gcp-project-id>
     gcloud_sa_path: "~/gcp-credentials/service-account.json"
     credentials_file: "{{ lookup('env','HOME') }}/{{ gcloud_sa_path }}"
-    gcloud_service_account: service-account@project-id.iam.gserviceaccount.com
-
-    # use the section below to enter k8s cluster related information
-    cluster_name: <name for your k8s cluster>
-    initial_node_count: 1
-    disk_size_gb: 100
-    disk_type: pd-ssd
-    machine_type: n1-standard-2
-
+    
     # use the section below to enter k8s namespaces to manage
     # this namespace is used in the Deploying an Application section
     namespace: nginx
