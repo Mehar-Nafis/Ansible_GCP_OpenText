@@ -69,13 +69,12 @@ Execute the following command to deploy the `Nginx` web-server:
 ansible-playbook ansible/deploy-app-k8s.yml -i ansible/inventory/<your-inventory-filename>
 ```
 
-4. Accessing the Nginx
-
-Execute the following commands and then access the `Nginx` using this [URL](http://127.0.0.1:8080).
-
-```bash
-export POD_NAME=$(kubectl get pods --namespace nginx -l "app=nginx" -o jsonpath="{.items[0].metadata.name}")
-kubectl --namespace nginx port-forward $POD_NAME 8080:80 
+4. Cross verify
+```
+kubectl get ns
+```
+```
+kubectl -n nginx get po
 ```
 
 
