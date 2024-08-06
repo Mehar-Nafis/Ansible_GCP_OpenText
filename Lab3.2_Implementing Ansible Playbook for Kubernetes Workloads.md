@@ -78,11 +78,5 @@ export POD_NAME=$(kubectl get pods --namespace nginx -l "app=nginx" -o jsonpath=
 kubectl --namespace nginx port-forward $POD_NAME 8080:80 
 ```
 
-5. Cleaning up
-
-Execute the following command to destroy the `Kubernetes` cluster:
-```
-`ansible-playbook ansible/destroy-k8s.yml -i ansible/inventory/<your-inventory-filename>`
-```
 
 
