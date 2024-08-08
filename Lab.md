@@ -61,7 +61,6 @@ Provide the permission and run the script
 sudo chmod +x terraform.sh 
 ```
 ```
-
 . ./terraform.sh 
 ```
 
@@ -141,7 +140,7 @@ sudo chmod 600 ~/.ssh/id_rsa
 sudo chmod 644 ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_rsa.pub
 ```
-```
+
 save the file :wq
 ```
 sudo chmod +x ssh-key.sh
